@@ -1,0 +1,16 @@
+vc10/Debug/
+vc10/UpgradeLog.XML
+vc10/_UpgradeReport_Files/
+vc10/ipch/
+vc10/test_xgl/Debug/
+vc10/test_xgl/log_test_xgl.txt
+vc10/test_xgl/test_xgl.vcxproj.filters
+vc10/test_xgl/test_xgl.vcxproj.user
+vc10/vc10.sdf
+vc10/vc10.suo
+vc10/vc8.sln.old
+vc10/xgl/Debug/
+vc10/xgl/xgl.vcxproj.filters
+vc10/xgl/xgl.vcxproj.user
+xglmex.mexw32
+xglmex.mexw64
