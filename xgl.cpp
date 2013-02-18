@@ -524,6 +524,15 @@ void Session::Device::Init (D3D &d3d, unsigned d, FocusWindow &focus_window, con
         GetDesktopWindow (), NULL, wc.hInstance, NULL);
     if (hwnd == NULL)
         throw "Could not create application device window";
+    // Check if HW vertext processing is supported
+    D3DCAPS9 caps;
+    if (d3d->GetDeviceCaps (d, D3DDEVTYPE_HAL, &caps) != D3D_OK)
+        throw "Could not get device capabilities";
+    DWORD bf = 0;
+    if (caps.VertexProcessingCaps != 0 )
+        bf |= D3DCREATE_HARDWARE_VERTEXPROCESSING;
+    else
+        bf |= D3DCREATE_SOFTWARE_VERTEXPROCESSING;
     // Create the device
     D3DPRESENT_PARAMETERS pp;
     pp.BackBufferWidth = dm.width;
@@ -547,7 +556,7 @@ void Session::Device::Init (D3D &d3d, unsigned d, FocusWindow &focus_window, con
     if (d3d->CreateDevice (d,
         D3DDEVTYPE_HAL,
         focus_window.Hwnd (),
-        D3DCREATE_HARDWARE_VERTEXPROCESSING,
+        bf,
         &pp,
         &di) != D3D_OK)
         throw "Could not create device";

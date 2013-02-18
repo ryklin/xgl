@@ -1,9 +1,13 @@
-# XGL Graphics Library # # Copyright (C) 2006 # Center for Perceptual Systems
+# XGL Graphics Library
+# Copyright (C) 2013
+# Center for Perceptual Systems
 # University of Texas at Austin
 #
 # jsp Tue Oct  3 11:50:54 CDT 2006
 
-.PHONY: build check clean
+VERSION=1.0.6
+
+.PHONY: entry mfiles build check dist publish clean
 
 entry:
 	mexgen -e xgl.mg
@@ -16,6 +20,15 @@ build:
 
 check:
 	$(MAKE) -C vc8 check
+
+dist:
+	touch `cat dist_files.txt` # update timestamp
+	rm -f xgltoolbox-$(VERSION).zip
+	cat dist_files.txt | zip -j xgltoolbox-$(VERSION).zip -@
+	unzip -l xgltoolbox-$(VERSION).zip
+
+publish:
+	scp xgltoolbox-$(VERSION).zip jsp@128.83.207.86:~/public_html/software
 
 clean:
 	rm -f .deps
