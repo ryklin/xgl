@@ -28,7 +28,7 @@ dist:
 	unzip -l xgltoolbox-$(VERSION).zip
 
 publish:
-	scp xgltoolbox-$(VERSION).zip jsp@128.83.207.86:~/public_html/software
+	scp xgltoolbox-$(VERSION).zip jsp@psy58:~/public_html/software
 
 clean:
 	rm -f .deps
