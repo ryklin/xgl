@@ -10,6 +10,6 @@
 #define VERSION_H
 
 const unsigned MAJOR_VERSION = 1 ;
-const unsigned MINOR_VERSION = 6 ;
+const unsigned MINOR_VERSION = 1 ;
 
 #endif // VERSION_H

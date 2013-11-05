@@ -5,7 +5,7 @@
 #
 # jsp Tue Oct  3 11:50:54 CDT 2006
 
-VERSION=1.0.6
+VERSION=1.1.0
 
 .PHONY: entry mfiles build check dist publish clean
 
