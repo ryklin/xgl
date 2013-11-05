@@ -255,7 +255,7 @@ void xglinit (int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     {
         mexPrintf ("-xglinit\n");
         mexPrintf ("XGL library, version %d.%d\n", MAJOR_VERSION, MINOR_VERSION);
-        mexPrintf ("Copyright (C) 2003-2006\n");
+        mexPrintf ("Copyright (C) 2013\n");
         mexPrintf ("Center for Perceptual Systems\n");
         mexPrintf ("University of Texas at Austin\n");
     }
